@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import exercises from './assets/data/exercises.json';
 
 export default function App() {
   return (
