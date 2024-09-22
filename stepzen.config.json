@@ -1,0 +1,4 @@
+{
+  "endpoint": "api/oily-goat",
+  "root": "api/curl"
+}
