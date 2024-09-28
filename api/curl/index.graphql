@@ -8,11 +8,11 @@ type Exercise {
 }
 
 type Query {
-  exercises(muscle: String): [Exercise]
+  exercises(muscle: String, name: String): [Exercise]
     @rest(
       endpoint: "https://api.api-ninjas.com/v1/exercises"
       headers: [
-        { name: "x-api-key", value: "9NOs3htkLJAFpgm8ONGbow==qEWM4gM3aCkOsZqO" }
+        { name: "x-api-key", value: "BgdENXtG74v2VF67YFbix8jiUyhnqmne1o7uWi9J" }
       ]
     )
 }

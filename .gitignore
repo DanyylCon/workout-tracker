@@ -36,3 +36,6 @@ yarn-error.*
 
 # Extra
 curl-command.txt
+
+# Environment
+.env
