@@ -5,6 +5,7 @@ import { useState } from "react";
 import { gql } from "graphql-request";
 import { useQuery } from "@tanstack/react-query";
 import client from "../graphqlClient";
+import NewSetInput from "../components/NewSetInput";
 
 
 const document = gql`
@@ -24,7 +25,7 @@ export default function ExerciseDetailsScreen() {
 
   const {data, isLoading, error} = useQuery({
     queryKey: ['exercises', name],
-    queryFn: () => client.request(document, {name})
+    queryFn: () => client.request(document, { name })
   });
 
   const [isInstructionExpanded, setIsInstructionExpanded] = useState(false);
@@ -54,7 +55,7 @@ export default function ExerciseDetailsScreen() {
           <Text  style={styles.exerciseName}>{exercise.name}</Text>
           <Text style={styles.exerciseSubtitle}>
             <Text style={styles.exercisesSubItem}>{exercise.muscle}</Text> | 
-            <Text style={styles.exercisesSubItem}>{exercise.equipment}</Text>
+            <Text style={styles.exercisesSubItem}> {exercise.equipment}</Text>
           </Text>
         </View>
 
@@ -69,6 +70,7 @@ export default function ExerciseDetailsScreen() {
             {isInstructionExpanded ? 'See less' : 'See more'}
           </Text>
         </View>
+        <NewSetInput/>
     </ScrollView>
   )
 }
